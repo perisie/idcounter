@@ -1,7 +1,9 @@
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/perisie/kvstore v0.0.0-20250520065944-222f8e532fb7 h1:RGi4Jp06STWEEP92Lm8UuuP+s98kdJ0wjKaKL2WrNag=
-github.com/perisie/kvstore v0.0.0-20250520065944-222f8e532fb7/go.mod h1:6bVjPQJOLJ17DbH0ZPD9/2sjDWri5tnm7AQMpPmk7W8=
+github.com/perisie/kvstore v1.0.0 h1:BlDYfvvpFQmq+aQLYUbbRkhWOs45VQ11ObrcIAVkVYE=
+github.com/perisie/kvstore v1.0.0/go.mod h1:H7qUn4viCo1Ylfa1JB9obKqxGU0oeeL1Kd580C6O06M=
+github.com/perisie/mouse v1.1.0 h1:rdIev0TwqNO6WEyxxfVUGdMrWA8ryPD9YxcYwYkdYEU=
+github.com/perisie/mouse v1.1.0/go.mod h1:eiVABvprS42grHAzHcqslg5p1Xt67uiSX/qT6twuk0c=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/stretchr/objx v0.5.2 h1:xuMeJ0Sdp5ZMRXx/aWO6RZxdr3beISkG5/G/aIRr3pY=

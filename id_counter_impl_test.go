@@ -2,6 +2,7 @@ package idcounter
 
 import (
 	"errors"
+	"os"
 	"testing"
 
 	"github.com/perisie/kvstore"
@@ -10,21 +11,22 @@ import (
 )
 
 func Test_id_counter(t *testing.T) {
-	id_counter := New(kvstore.Kv_store_fake_new())
+	id_counter := test_before(t)
 	my_key := "my_key"
 
-	id, _ := id_counter.Get(my_key)
+	_, err := id_counter.Get(my_key)
+	assert.NotNil(t, err)
 
-	assert.Equal(t, 0, id)
+	id, err := id_counter.Add(my_key, 1)
+	assert.Nil(t, err)
+	assert.Equal(t, 1, id)
 
-	_, _ = id_counter.Add(my_key, 1)
-	id, _ = id_counter.Add(my_key, 2)
-
+	id, err = id_counter.Add(my_key, 2)
+	assert.Nil(t, err)
 	assert.Equal(t, 3, id)
 
-	id, _ = id_counter.Add(my_key, -1337)
-
-	assert.Equal(t, 0, id)
+	id, err = id_counter.Add(my_key, -1337)
+	assert.NotNil(t, err)
 }
 
 func Test_id_counter_error_store(t *testing.T) {
@@ -58,4 +60,13 @@ func Test_id_counter_error_set(t *testing.T) {
 
 	_, err := id_counter.set(my_key, 1)
 	assert.NotNil(t, err)
+}
+
+func test_before(t *testing.T) Id_counter {
+	err := os.RemoveAll("data")
+	assert.Nil(t, err)
+
+	kv_store := kvstore.Kv_store_mouse_new("data")
+	id_counter := New(kv_store)
+	return id_counter
 }
